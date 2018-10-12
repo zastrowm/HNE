@@ -1,5 +1,5 @@
-set FIREFOX="HNEP-firefox.zip" 
-set CHROMES="HNEP-chrome.zip" 
+set FIREFOX="HNE-firefox.zip" 
+set CHROMES="HNE-chrome.zip" 
 
 del "%FIREFOX%"
 del "%CHROMES%"
