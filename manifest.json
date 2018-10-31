@@ -1,7 +1,7 @@
 {
     "name": "Hacker News, Enhanced",
     "short_name": "HNE",
-    "version": "2.0.1.2",
+    "version": "2.1.0.0",
     "description": "Hacker News, Enhanced.  Like HNES, but before the restyling update",
     "manifest_version": 2,
     "background": {
@@ -15,7 +15,7 @@
     },
     "content_scripts": [
       { "run_at": "document_start",
-        "css": [ "style.css" ],
+        "css": [ "hne-style.css" ],
         "matches": [
           "http://news.ycombinator.com/*",
           "https://news.ycombinator.com/*",
@@ -29,7 +29,7 @@
       {
         "run_at": "document_end",
         "all_frames": true,
-        "css": [ "style.css" ],
+        "css": [ "hne-style.css" ],
         "js": [
           "js/jquery-3.2.1.min.js",
           "js/linkify/jquery.linkify-1.0.js",

@@ -8,6 +8,64 @@
 *
 */
 
+html {
+  --topBarTextColor: #333333;
+}
+
+html {
+  --storyRowDefault: #f6f6ef;
+  --storyRowOdd: #e6e6df;
+  --topBar: #d74937;
+  --topBarLinks: black;
+  --topLinkActivate: white;
+
+  --commentsHover: #dd4b39;
+  --linkColor: #202020;
+  --textColor: black;
+  --indentColor: #BC9B85;
+  --indentColorNew: #ff6600;
+  --pageBackground: transparent;
+
+  --newUserColor: #3c963c;
+  --profileLabelColor: #444444;
+
+  --heatHottColor: #d93b3d;
+  --heatNoneColor: #242222;
+  --heatMildColor: #462628;
+  --heatMediColor: #702e30;
+}
+
+html.dark {
+  --storyRowDefault: #090910;
+  --storyRowOdd: #191920;
+  --topBar: #28b6c8;
+  --topBarLinks: white;
+  --topLinkActivate: black;
+
+  --commentsHover: #22B4C6;
+  --linkColor: #dfdfdf;
+  --textColor: #cccccc;
+  --indentColor: #43647A;
+  --indentColorNew: #0099FF;
+  --pageBackground: #333333;
+
+  --newUserColor: #C369C3;
+  --profileLabelColor: #BBBBBB;
+
+  --heatHottColor: #26C4C2;
+  --heatNoneColor: #DBDDDD;
+  --heatMildColor: #B9D9D7;
+  --heatMediColor: #8FD1CF;
+}
+
+html {
+  background-color: var(--pageBackground) !important;
+}
+
+body .c00, body .c00 a:link {
+  color: var(--textColor);
+}
+
 body {
   /* hide content flash */
   visibility: hidden;
@@ -31,11 +89,11 @@ body center table table {
 /*header color*/
 #header,
 .nav-drop-down {
-  background-color: #d74937;
+  background-color: var(--topBar);
 }
 /*content color*/
 #content {
-  background-color: #f6f6ef !important;
+  background-color: var(--storyRowDefault) !important;
 }
 
 /*header padding*/
@@ -76,11 +134,11 @@ table tr td {
 /*highlight every other story line except 'More' link*/
 #index-body #content tr:nth-child(2n),
 #jobs-body #content tr:nth-child(2n) {
-  background-color: #e6e6df !important;
+  background-color: var(--storyRowOdd) !important;
 }
 #index-body #content tr,
 #index-body #content tr:nth-child(32) {
-  background-color: #f6f6ef !important;
+  background-color: var(--storyRowDefault) !important;
 }
 #index-body #content tr.on_story {
   border: 1px solid black;
@@ -105,7 +163,7 @@ table tr td {
   left: 0;
 }
 .comments:hover {
-  color: #dd4b39;
+  color: var(--commentsHover);
 }
 /* show a fallback if parsing comment number fails */
 .comments:empty::before {
@@ -157,7 +215,7 @@ a.comments:hover {
 /*karma score in the user nav*/
 #my-karma {
   padding-left: 8px;
-  color: #f6f6ef;
+  color: var(--storyRowDefault);
 }
 /*navigation links*/
 .nav-links a {
@@ -195,7 +253,6 @@ a.comments:hover {
   position: relative;
   top: -2px;
   left: -3px;
-  font-shadow: none;
   font-size: 8px;
   content: '▼';
   padding-right: 5px;
@@ -238,7 +295,7 @@ a.comments:hover {
   text-align: left !important;
 }
 #more a {
-  color: #D93B3D;
+  color: var(--heatHottColor);
 }
 #more a:hover {
   text-decoration: underline;
@@ -261,16 +318,16 @@ body#item-body .title {
 }
 
 a:link {
-  color: #202020;
+  color: var(--linkColor) !important;
 }
 a:hover {
-  color: #dd4b39;
+  color: var(--commentsHover) !important;
 }
 /*submit/add comment button*/
 input[type="submit"] {
   font-size: 13px;
   color: white;
-  background: -webkit-gradient(linear,left top,left bottom,from(#d74937),to(#c23422));
+  background: -webkit-gradient(linear,left top,left bottom,from(var(--topBar)),to(#c23422));
   padding: 5px 10px;
   text-transform: capitalize;
   border: 1px solid #666;
@@ -278,7 +335,7 @@ input[type="submit"] {
 }
 input[type="submit"]:hover {
   cursor: pointer;
-  background: #d74937;
+  background: var(--topBar);
 }
 /*format add comment button on its own line*/
 input[value="add comment"] {
@@ -296,7 +353,7 @@ font[color="#ff6600"] {
 }
 .submitter a:hover,
 .title a:hover {
-  color: #dd4b39;
+  color: var(--commentsHover);
 }
 
 /*user name in info subtext*/
@@ -326,7 +383,7 @@ div > .comhead {
 /*score next to username indicating user upvotes*/
 .user-score {
   margin-left: 4px;
-  color: #D74937;
+  color: var(--topBar);
 }
 .user-score:before, .user-score:after {
   color: #888;
@@ -355,9 +412,16 @@ div > .comhead {
 .title:first-child {
   padding-left: 5px !important;
 }
+
+.pagetop a,
+.pagetop a:active,
+.pagetop a:visited {
+  color: var(--topBarLinks) !important;
+}
+
 .pagetop a:hover,
-.pagetop a:active {
-  color: #000;
+.pagetop a.nav-active-link {
+  color: var(--topLinkActivate) !important;
 }
 
 /*footer links*/
@@ -401,7 +465,7 @@ textarea, input {
   border-radius: 2px;
 }
 form textarea:focus, textarea:focus, input:focus, input[name="q"] {
-  outline: #d74937;
+  outline: var(--topBar);
   border-color: #d73937 !important;
 }
 form[action="http://hn.algolia.com/"],
@@ -436,17 +500,17 @@ br {
 /*usernames are usually black*/
 #item-body .comhead a.commenter,
 #threads-body .comhead a.commenter {
-  color: #000 !important;
+  color: var(--textColor) !important;
 }
 /*but new users are green*/
 a.new_user,
 #item-body .comhead a.new_user {
-  color: #3c963c !important;
+  color: var(--newUserColor) !important;
 }
 /*and the person who posted the story is orange*/
 a.original_poster,
 #item-body .comhead a.original_poster {
-  color: #D93B3D !important;
+  color: var(--heatHottColor) !important;
 }
 .comment font{
   display: block;
@@ -494,7 +558,7 @@ pre {
   margin: 3px;
 }
 a[href^="reply"]:visited {
-  color: #000
+  color: var(--textColor);
 }
 
 #options_bar {
@@ -508,7 +572,7 @@ a[href^="reply"]:visited {
 td::selection,
 ::selection *,
 ::selection {
-  background: #dd4b39 !important;
+  background: var(--commentsHover) !important;
   color: #fff;
 }
 
@@ -549,16 +613,16 @@ form[action="/r"] input[type="submit"] {
 
 /* HN Heat */
 .no-heat {
-  color: #242222 !important;
+  color: var(--heatNoneColor) !important;
 }
 .mild {
-  color: #462628 !important;
+  color: var(--heatMildColor) !important;
 }
 .medium {
-  color: #702e30 !important;
+  color: var(--heatMediColor) !important;
 }
 .hot {
-  color: #d93b3d !important;
+  color: var(--heatHottColor) !important;
 }
 
 #jobs-body table table {
@@ -571,7 +635,7 @@ form[action="/r"] input[type="submit"] {
 }
 
 .poll-graph {
-  background-color: #D74937;
+  background-color: var(--topBar);
   display: block;
   height: 32px;
 }
@@ -593,7 +657,7 @@ td #more.link-highlight {
 }
 
 #alert {
-  color: #dd4b39;
+  color: var(--commentsHover);
   padding: 5px;
   text-align: center;
 }
@@ -609,11 +673,11 @@ td #more.link-highlight {
 #user-profile td:first-child,
 body#poll-body form td:first-child,
 body#login-body tr#content form td:first-child {
-  color: #444;
+  color: var(--profileLabelColor);
   padding-right: 1em;
 }
 #user-profile td:nth-child(2) {
-  color: #000;
+  color: var(--textColor);
 }
 #user-profile.your-profile td p:first-of-type {
   margin-top: .5em;
@@ -707,11 +771,13 @@ body#login-body {
 }
 
 .hnes-new .comment-table td:first-child {
-    border-right: 2px solid #F60;
+  border-right: 2px solid;
+  border-right-color: var(--indentColorNew);
 }
 
 .hnes-new-parent .comment-table td:first-child {
-    border-right: 2px solid #BC9B85;
+    border-right: 2px solid;
+  border-right-color: var(--indentColor);
 }
 
 .tag, .tagText:not(:empty) {
