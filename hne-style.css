@@ -18,6 +18,7 @@ html {
   --topBar: #d74937;
   --topBarLinks: black;
   --topLinkActivate: white;
+  --submitBottom: #c23422;
 
   --commentsHover: #dd4b39;
   --linkColor: #202020;
@@ -41,6 +42,7 @@ html.dark {
   --topBar: #28b6c8;
   --topBarLinks: white;
   --topLinkActivate: black;
+  --submitBottom: #3DCBDD;
 
   --commentsHover: #22B4C6;
   --linkColor: #dfdfdf;
@@ -327,7 +329,7 @@ a:hover {
 input[type="submit"] {
   font-size: 13px;
   color: white;
-  background: -webkit-gradient(linear,left top,left bottom,from(var(--topBar)),to(#c23422));
+  background: -webkit-gradient(linear,left top,left bottom,from(var(--topBar)),to(var(--submitBottom)));
   padding: 5px 10px;
   text-transform: capitalize;
   border: 1px solid #666;
