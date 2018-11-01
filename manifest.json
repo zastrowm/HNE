@@ -1,7 +1,7 @@
 {
     "name": "Hacker News, Enhanced",
     "short_name": "HNE",
-    "version": "2.1.0.0",
+    "version": "2.1.0.1",
     "description": "Hacker News, Enhanced.  Like HNES, but before the restyling update",
     "manifest_version": 2,
     "options_ui": {

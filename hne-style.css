@@ -19,6 +19,7 @@ html {
   --topBarLinks: black;
   --topLinkActivate: white;
   --submitBottom: #c23422;
+  --titleColor: #242222;
 
   --commentsHover: #dd4b39;
   --linkColor: #202020;
@@ -43,6 +44,7 @@ html.dark {
   --topBarLinks: white;
   --topLinkActivate: black;
   --submitBottom: #3DCBDD;
+  --titleColor: #DBDDDD;
 
   --commentsHover: #22B4C6;
   --linkColor: #dfdfdf;
@@ -62,6 +64,25 @@ html.dark {
 
 html {
   background-color: var(--pageBackground) !important;
+}
+
+/* Note, it is a child of body so that it has a higher specificity than the default style */
+body .votearrow {
+  /* SVG arrow so that it scales to high-resolution displays */
+  background-image: url('moz-extension://__MSG_@@extension_id__/images/upvote.svg'),
+                    url('chrome-extension://__MSG_@@extension_id__/images/upvote.svg');
+
+}
+
+/* Instead of simply rotating the entire element, the svg is actually manually flipped.
+   This results in a pixel perfect reflection of the up arrow */
+body .votearrow.rotate180 {
+  background-image: url('moz-extension://__MSG_@@extension_id__/images/downvote.svg'),
+                    url('chrome-extension://__MSG_@@extension_id__/images/downvote.svg');
+}
+
+html.dark body .votearrow {
+  filter: invert(1);
 }
 
 body .c00, body .c00 a:link {
@@ -308,7 +329,7 @@ body#item-body .title {
 }
 /*story title*/
 .title {
-  color: #242222;
+  color: var(--titleColor);
   font-size: 16px !important;
   line-height: 18px;
   font-weight: medium;
@@ -375,7 +396,7 @@ body#index-body .submitter a:visited {
   color: #989898 !important
 }
 .comhead {
-  color: #000;
+  color: var(--topBarLinks);
   font-size: 11px !important;
 }
 div > .comhead {
@@ -823,21 +844,7 @@ body .votelinks a:hover .votearrow {
   opacity: 1;
 }
 
-/* Note, it is a child of body so that it has a higher specificity than the default style */
 body .votearrow {
-  /* SVG arrow so that it scales to high-resolution displays */
-  background-image: url('moz-extension://__MSG_@@extension_id__/images/upvote.svg'),
-        url('chrome-extension://__MSG_@@extension_id__/images/upvote.svg')
-  ;
   transform: none;
   opacity: .5;
 }
-/* Instead of simply rotating the entire element, the svg is actually manually flipped.
-   This results in a pixel perfect reflection of the up arrow */
-body .votearrow.rotate180 {
-  background-image: url('moz-extension://__MSG_@@extension_id__/images/downvote.svg'),
-      url('chrome-extension://__MSG_@@extension_id__/images/downvote.svg');
-  transform: none;
-  opacity: .5;
-}
-
