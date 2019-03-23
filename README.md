@@ -37,20 +37,6 @@ https://addons.mozilla.org/en-US/firefox/addon/hne/
 
 https://chrome.google.com/webstore/detail/mpapcnflpbamaennmdomnnnaaaciofep/
 
-## TODO
-
-- Options page
-- Put search in a better place + ajax auto-complete
-- Do something with un-threaded comment lists (e.g. best comments)
-- Make profiles prettier
-- Allow user to highlight friends (ala RES)
-- Show dead/grayed-out comments on mouse hover (or maybe a button)
-- Test / make it work when user can see downvotes
-
-## Things I can't test
-
-I don't have enough karma to test down votes, creating polls, or topbar color
-
 ## Compatability
 
 I do not test this extension with any other extensions active on Hacker News so I cannot guarantee that it will play nice. If you come across an apparent bug please make sure that any other extension are disabled or please mention which ones are enabled in the bug report.
